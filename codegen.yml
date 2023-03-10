@@ -1,0 +1,17 @@
+overwrite: true
+schema: "./shopify/schema.gql"
+documents: "./shopify/graphql/**/*.graphql"
+watch: true
+generates:
+  ./shopify/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-query"
+    config:
+      fetcher: graphql-request
+      pureMagicComment: true
+      withHooks: true
+      exposeQueryKeys: true
+      exposeFetcher: true
+      addInfiniteQuery: true
