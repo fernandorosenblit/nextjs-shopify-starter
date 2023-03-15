@@ -11,13 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	const [queryClient] = useState(() => new QueryClient());
 
 	return (
-		<>
-			<QueryClientProvider client={queryClient}>
-				<Hydrate state={pageProps.dehydratedState}>
-					<Component {...pageProps} />
-					<ReactQueryDevtools initialIsOpen={false} />
-				</Hydrate>
-			</QueryClientProvider>
-		</>
+		<QueryClientProvider client={queryClient}>
+			<Hydrate state={pageProps.dehydratedState}>
+				<Component {...pageProps} />
+				<ReactQueryDevtools initialIsOpen={false} />
+			</Hydrate>
+		</QueryClientProvider>
 	);
 }

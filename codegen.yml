@@ -1,5 +1,5 @@
 overwrite: true
-schema: "./shopify/schema.gql"
+schema: "./shopify/schema.json"
 documents: "./shopify/graphql/**/*.graphql"
 watch: true
 generates:
@@ -11,7 +11,6 @@ generates:
     config:
       fetcher: graphql-request
       pureMagicComment: true
-      withHooks: true
       exposeQueryKeys: true
       exposeFetcher: true
       addInfiniteQuery: true

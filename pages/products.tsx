@@ -20,10 +20,10 @@ export default function ProductsPage() {
 	const { data } = useGetProductsQuery(client);
 
 	return (
-		<div className="bg-white">
+		<ul>
 			{data?.products.edges.map((product) => (
-				<h6 key={product.node.id}>{product.node.title}</h6>
+				<li key={product.node.id}>{product.node.title}</li>
 			))}
-		</div>
+		</ul>
 	);
 }
